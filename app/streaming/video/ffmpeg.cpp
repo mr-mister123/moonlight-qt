@@ -1005,8 +1005,8 @@ bool FFmpegVideoDecoder::tryInitializeRenderer(const AVCodec* decoder,
     //
     // For qcom-venus, it seems to lead to failures allocating capture buffers (bug #1042).
     // For wave5 (VisionFive), it leads to an invalid pitch error when calling drmModeAddFB2().
-    testFrameDecoderParams.width = 1280;
-    testFrameDecoderParams.height = 720;
+    testFrameDecoderParams.width = 1920;
+    testFrameDecoderParams.height = 1080;
 
     m_HwDecodeCfg = hwConfig;
 
