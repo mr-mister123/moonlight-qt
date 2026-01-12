@@ -454,8 +454,8 @@ void Session::getDecoderInfo(SDL_Window* window,
     if (chooseDecoder(StreamingPreferences::VDS_AUTO,
                       window, VIDEO_FORMAT_H264, 1920, 1080, 60,
                       false, false, true, decoder)) {
-        isHardwareAccelerated = decoder->isHardwareAccelerated();
-        isFullScreenOnly = decoder->isAlwaysFullScreen();
+        isHardwareAccelerated = true; // decoder->isHardwareAccelerated();
+        isFullScreenOnly = true; // decoder->isAlwaysFullScreen();
         maxResolution = decoder->getDecoderMaxResolution();
         delete decoder;
 
