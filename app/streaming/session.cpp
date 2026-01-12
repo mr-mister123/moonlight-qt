@@ -374,6 +374,7 @@ void Session::getDecoderInfo(SDL_Window* window,
 {
     IVideoDecoder* decoder;
 
+    /*
     // Since AV1 support on the host side is in its infancy, let's not consider
     // _only_ a working AV1 decoder to be acceptable and still show the warning
     // dialog indicating lack of hardware decoding support.
@@ -446,6 +447,8 @@ void Session::getDecoderInfo(SDL_Window* window,
     }
 #endif
 
+    */
+    
     // If we still didn't find a hardware decoder, try H.264 now.
     // This will fall back to software decoding, so it should always work.
     if (chooseDecoder(StreamingPreferences::VDS_AUTO,
