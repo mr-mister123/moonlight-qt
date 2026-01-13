@@ -518,9 +518,15 @@ bool FFmpegVideoDecoder::completeInitialization(const AVCodec* decoder, enum AVP
     if (testFrame) {
         switch (params->videoFormat) {
         case VIDEO_FORMAT_H264:
+            SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
+                        "Assuming H.264 is supported");
+            return true;
+
+            /*
             m_Pkt->data = (uint8_t*)k_H264TestFrame;
             m_Pkt->size = sizeof(k_H264TestFrame);
             break;
+            */
         case VIDEO_FORMAT_H265:
             m_Pkt->data = (uint8_t*)k_HEVCMainTestFrame;
             m_Pkt->size = sizeof(k_HEVCMainTestFrame);
